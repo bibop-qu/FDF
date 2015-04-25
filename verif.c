@@ -18,7 +18,10 @@ int		verif_size(char *line, int *size)
 	char	**tmp;
 
 	i = 0;
-	tmp = ft_strsplit(line, ' ');
+	if (line)
+		tmp = ft_strsplit(line, ' ');
+	else
+		tmp = 0;
 	while (tmp[i])
 		i++;
 	if (*size == 0)

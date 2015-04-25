@@ -21,23 +21,23 @@ int		expose_hook(t_env *e)
 
 int		zoom(int keycode, t_env *e)
 {
-	if (keycode == 65451)
+	if (keycode == 69)
 	{
 		e->space += 5;
 		expose_hook(e);
 	}
-	if (keycode == 65453)
+	if (keycode == 78)
 	{
 		if ((e->space - 5) >= 0)
 			e->space -= 5;
 		expose_hook(e);
 	}
-	if (keycode == 119)
+	if (keycode == 13)
 	{
 		e->coef_z += 0.2;
 		expose_hook(e);
 	}
-	if (keycode == 115)
+	if (keycode == 1)
 	{
 		e->coef_z -= 0.2;
 		expose_hook(e);
@@ -47,22 +47,22 @@ int		zoom(int keycode, t_env *e)
 
 int		move(int keycode, t_env *e)
 {
-	if (keycode == 65361)
+	if (keycode == 123)
 	{
 		e->origin[0] -= 20;
 		expose_hook(e);
 	}
-	if (keycode == 65363)
+	if (keycode == 124)
 	{
 		e->origin[0] += 20;
 		expose_hook(e);
 	}
-	if (keycode == 65364)
+	if (keycode == 125)
 	{
 		e->origin[1] += 20;
 		expose_hook(e);
 	}
-	if (keycode == 65362)
+	if (keycode == 126)
 	{
 		e->origin[1] -= 20;
 		expose_hook(e);
@@ -72,7 +72,7 @@ int		move(int keycode, t_env *e)
 
 int		key_hook(int keycode, t_env *e)
 {
-	if (keycode == 65307)
+	if (keycode == 53)
 		exit(0);
 	move(keycode, e);
 	zoom(keycode, e);

@@ -15,10 +15,12 @@
 int		verif_map(char *av)
 {
 	int		fd;
+	int		count;
 	int		size;
 	char	*line;
 
 	fd = open(av, O_RDONLY);
+	count = 0;
 	size = 0;
 	if (fd == -1)
 		perror("");
@@ -26,7 +28,10 @@ int		verif_map(char *av)
 	{
 		if (!verif_line(line, &size))
 			return (0);
+		count++;
 	}
+	if (count == 0)
+		return (0);
 	return (1);
 }
 
