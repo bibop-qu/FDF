@@ -6,7 +6,7 @@
 /*   By: basle-qu <basle-qu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/15 17:25:39 by basle-qu          #+#    #+#             */
-/*   Updated: 2015/01/25 16:03:53 by basle-qu         ###   ########.fr       */
+/*   Updated: 2015/04/27 11:21:01 by basle-qu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,10 @@ int		zoom(int keycode, t_env *e)
 	}
 	if (keycode == 1)
 	{
-		e->coef_z -= 0.2;
+		if ((e->coef_z - 0.2) >= 0)
+			e->coef_z -= 0.2;
+		else
+			e->coef_z = 0;
 		expose_hook(e);
 	}
 	return (0);
